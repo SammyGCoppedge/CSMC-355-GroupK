@@ -33,7 +33,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/textUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/textView5"
@@ -43,12 +43,12 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/textEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/editText"
-            android:layout_alignRight="@+id/editText"
-            android:layout_below="@+id/editText"
+            android:layout_alignEnd="@+id/textUsername"
+            android:layout_alignRight="@+id/textUsername"
+            android:layout_below="@+id/textUsername"
             android:layout_marginTop="26dp"
             android:ems="10"
             android:inputType="textPersonName" />
@@ -57,7 +57,7 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/editText2"
+            android:layout_alignBottom="@+id/textEmail"
             android:layout_alignEnd="@+id/textView5"
             android:layout_alignRight="@+id/textView5"
             android:layout_marginBottom="12dp"
@@ -65,12 +65,12 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/textPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/editText2"
-            android:layout_alignStart="@+id/editText2"
-            android:layout_below="@+id/editText2"
+            android:layout_alignLeft="@+id/textEmail"
+            android:layout_alignStart="@+id/textEmail"
+            android:layout_below="@+id/textEmail"
             android:layout_marginTop="35dp"
             android:ems="10"
             android:inputType="textPassword" />
@@ -79,20 +79,20 @@
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/editText5"
-            android:layout_alignBottom="@+id/editText5"
+            android:layout_alignBaseline="@+id/textPassword"
+            android:layout_alignBottom="@+id/textPassword"
             android:layout_alignEnd="@+id/textView6"
             android:layout_alignRight="@+id/textView6"
             android:text="Password"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <EditText
-            android:id="@+id/editText6"
+            android:id="@+id/textConfirmPass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/editText5"
-            android:layout_alignStart="@+id/editText5"
-            android:layout_below="@+id/editText5"
+            android:layout_alignLeft="@+id/textPassword"
+            android:layout_alignStart="@+id/textPassword"
+            android:layout_below="@+id/textPassword"
             android:layout_marginTop="32dp"
             android:ems="10"
             android:inputType="textPassword" />
@@ -103,7 +103,7 @@
             android:layout_height="wrap_content"
             android:layout_alignEnd="@+id/textView9"
             android:layout_alignRight="@+id/textView9"
-            android:layout_alignTop="@+id/editText6"
+            android:layout_alignTop="@+id/textConfirmPass"
             android:layout_marginTop="11dp"
             android:text="Confirm"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
@@ -112,7 +112,7 @@
             android:id="@+id/ConfirmButton"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editText6"
+            android:layout_below="@+id/textConfirmPass"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="27dp"
             android:onClick="onClickConfirm"

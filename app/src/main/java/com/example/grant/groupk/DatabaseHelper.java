@@ -13,7 +13,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper{
 
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "users.db";
+    private static final String DATABASE_NAME = "userlist.db";
     private static final String TABLE_NAME = "users";
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_USER = "user";
@@ -21,8 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     private static final String COLUMN_PASSWORD = "password";
     SQLiteDatabase db;
 
-    private static final String TABLE_CREATE = "create table users (id integer primary key not null auto_increment , " +
-            "user text not null , email text not null , password text not null);";
+    private static final String TABLE_CREATE = "CREATE TABLE users(id INT PRIMARY KEY NOT NULL , user TEXT NOT NULL , email TEXT NOT NULL , password TEXT NOT NULL);";
 
     public DatabaseHelper(Context context)
     {
@@ -30,13 +29,13 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+    public void onCreate(SQLiteDatabase db) {
         db.execSQL(TABLE_CREATE);
         this.db = db;
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         String query = "DROP TABLE IF EXISTS "+TABLE_NAME;
         db.execSQL(query);
         this.onCreate(db);
@@ -49,13 +48,44 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
         String query = "select * from users";
         Cursor cursor = db.rawQuery(query, null);
+        int count = cursor.getCount();
 
-        values.put(COLUMN_ID, user.getId());
+        values.put(COLUMN_ID, count);
         values.put(COLUMN_USER, user.getUsername());
         values.put(COLUMN_EMAIL, user.getEmail());
         values.put(COLUMN_PASSWORD, user.getPassword());
 
         db.insert(TABLE_NAME, null, values);
         db.close();
+    }
+
+    public String searchPass(String s)
+    {
+        db = this.getReadableDatabase();
+        String query = "select user, password from " +TABLE_NAME;
+        Cursor cursor = db.rawQuery(query, null);
+
+        String a, b;
+        b = "User not found.";
+        if(cursor.moveToFirst())
+        {
+            do
+            {
+                a = cursor.getString(0);
+                b = cursor.getString(1);
+
+
+                if (a.equals(s))
+                {
+                    b = cursor.getString(1);
+                    break;
+                }
+
+                b = "Word not found.";
+            }
+            while(cursor.moveToNext());
+        }
+
+        return b;
     }
 }
