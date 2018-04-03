@@ -55,13 +55,24 @@ public class SignUp extends Activity {
             user.setUsername(username);
             user.setPassword(password);
 
-            helper.insertUser(user);
+            if (helper.contains(user.getUsername(), user.getEmail()))
+            {
+                //Popup for already existing username/email
 
-            Intent i = new Intent(SignUp.this, Login.class);
-            i.putExtra("username", username);
-            i.putExtra("email", email);
-            i.putExtra("password", password);
-            startActivity(i);
+                Toast entryError = Toast.makeText(SignUp.this, "Username or Email already in use.", Toast.LENGTH_SHORT);
+                entryError.show();
+            }
+            else
+            {
+                helper.insertUser(user);
+
+
+                Intent i = new Intent(SignUp.this, Login.class);
+                i.putExtra("username", username);
+                i.putExtra("email", email);
+                i.putExtra("password", password);
+                startActivity(i);
+            }
         }
     }
 }
