@@ -88,4 +88,28 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
         return b;
     }
+
+    public boolean contains(String name, String email)
+    {
+        db = this.getReadableDatabase();
+        String query = "select user, email from "+TABLE_NAME;
+        Cursor cursor = db.rawQuery(query, null);
+
+        String a, b;
+        if(cursor.moveToFirst())
+        {
+            do
+            {
+                a = cursor.getString(0);
+                b = cursor.getString(1);
+
+                if (name.equals(a))
+                    return true;
+                if (b.equals(email))
+                    return true;
+            }
+            while (cursor.moveToNext());
+        }
+        return false;
+    }
 }
