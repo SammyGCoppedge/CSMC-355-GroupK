@@ -20,6 +20,7 @@
         <activity android:name=".SignUp"></activity>
         <activity android:name=".Homepage"></activity>
         <activity android:name=".ProfilePage"></activity>
+        <activity android:name=".CalendarActivity"></activity>
     </application>
 
 </manifest>
