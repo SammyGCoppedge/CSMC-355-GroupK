@@ -58,10 +58,10 @@
                     android:text="Name:" />
 
                 <TextView
-                    android:id="@+id/profileName"
+                    android:id="@+id/textView33"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/emptyString"
+                    android:text="TextView"
                     android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
                 <Space
@@ -78,7 +78,7 @@
                     android:id="@+id/profileDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/emptyString"
+                    android:text="TextView"
                     android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
                 <Space
@@ -95,7 +95,7 @@
                     android:id="@+id/profileType"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/emptyString"
+                    android:text="TextView"
                     android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
                 <Space
@@ -112,7 +112,7 @@
                     android:id="@+id/profileUploadCount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/emptyString"
+                    android:text="TextView"
                     android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
             </LinearLayout>
@@ -137,7 +137,7 @@
                 android:id="@+id/profileBio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/emptyString" />
+                android:text="TextView" />
 
             <Space
                 android:layout_width="match_parent"
