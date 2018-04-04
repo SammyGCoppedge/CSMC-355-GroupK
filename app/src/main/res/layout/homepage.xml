@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/main"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -13,8 +14,88 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/textView10"
+            android:layout_toRightOf="@+id/textView10"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:text="Hello,"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+
+        <Button
+            android:id="@+id/CatalogButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignEnd="@+id/textView10"
+            android:layout_alignRight="@+id/textView10"
+            android:layout_below="@+id/textView10"
+            android:layout_marginTop="96dp"
+            android:onClick="onCatalogClick"
+            android:text="catalog" />
+
+        <Button
+            android:id="@+id/MapButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignTop="@+id/CatalogButton"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="46dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+            android:onClick="onMapClick"
+            android:text="map" />
+
+        <Button
+            android:id="@+id/ChatButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignBottom="@+id/MapButton"
+            android:layout_alignTop="@+id/MapButton"
+            android:layout_marginLeft="19dp"
+            android:layout_marginStart="19dp"
+            android:layout_toEndOf="@+id/MapButton"
+            android:layout_toRightOf="@+id/MapButton"
+            android:onClick="onChatClick"
+            android:text="chat" />
+
+        <Button
+            android:id="@+id/ForumButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignLeft="@+id/CatalogButton"
+            android:layout_alignStart="@+id/CatalogButton"
+            android:layout_below="@+id/CatalogButton"
+            android:layout_marginTop="31dp"
+            android:onClick="onForumClick"
+            android:text="forum" />
+
+        <Button
+            android:id="@+id/CalendarButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignBottom="@+id/ForumButton"
+            android:layout_alignLeft="@+id/MapButton"
+            android:layout_alignStart="@+id/MapButton"
+            android:layout_alignTop="@+id/ForumButton"
+            android:onClick="onCalendarClick"
+            android:text="calendar" />
+
+        <Button
+            android:id="@+id/SettingButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignLeft="@+id/ChatButton"
+            android:layout_alignStart="@+id/ChatButton"
+            android:layout_alignTop="@+id/CalendarButton"
+            android:onClick="onSettingClick"
+            android:text="setting" />
+
     </RelativeLayout>
 </LinearLayout>
