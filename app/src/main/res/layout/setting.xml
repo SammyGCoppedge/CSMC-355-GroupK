@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/NoticesButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onNoticesClick"
+        android:text="notices" />
+
+    <Button
+        android:id="@+id/VersionButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onVersionClick"
+        android:text="version" />
+
+    <Button
+        android:id="@+id/PrivacyButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onPrivacyClick"
+        android:text="privacy" />
+
+    <Button
+        android:id="@+id/LogOutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onLogOutClick"
+        android:text="Log out" />
+
+    <Button
+        android:id="@+id/ContactButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onContactClick"
+        android:text="contact" />
+</LinearLayout>
