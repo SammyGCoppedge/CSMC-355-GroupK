@@ -38,4 +38,12 @@ public class Homepage extends AppCompatActivity{ //Activity
             startActivity(i);
         }
     }
+    
+    public void onSettingClick(View v) {
+        if (v.getId() == R.id.SettingButton) {
+            Intent i = new Intent(Homepage.this, Setting.class);
+            startActivity(i);
+        }
+
+    }
 }
