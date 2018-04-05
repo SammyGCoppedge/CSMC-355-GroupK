@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.CalendarView;
 
 /**
@@ -35,5 +36,11 @@ public class CalendarActivity extends AppCompatActivity{
                 startActivity(intent);
             }
         });
+    }
+
+    public void onAddNewEventButtonClick(View v)
+    {
+        Intent i = new Intent(CalendarActivity.this, AddEvent.class);
+        startActivity(i);
     }
 }
