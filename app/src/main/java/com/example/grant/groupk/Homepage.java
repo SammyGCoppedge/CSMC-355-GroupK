@@ -30,4 +30,12 @@ public class Homepage extends AppCompatActivity{ //Activity
             startActivity(i);
         }
     }
+
+    public void onMapClick(View v) {
+        if (v.getId() == R.id.MapButton)
+        {
+            Intent i = new Intent (Homepage.this, MapsActivity.class);
+            startActivity(i);
+        }
+    }
 }
