@@ -10,7 +10,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textUsername"
+            android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -36,10 +36,10 @@
             android:id="@+id/CatalogButton"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_alignEnd="@+id/textView10"
-            android:layout_alignRight="@+id/textView10"
             android:layout_below="@+id/textView10"
-            android:layout_marginTop="96dp"
+            android:layout_marginTop="95dp"
+            android:layout_toLeftOf="@+id/text"
+            android:layout_toStartOf="@+id/text"
             android:onClick="onCatalogClick"
             android:text="catalog" />
 
@@ -95,7 +95,7 @@
             android:layout_alignStart="@+id/ChatButton"
             android:layout_alignTop="@+id/CalendarButton"
             android:onClick="onSettingClick"
-            android:text="setting" />
+            android:text="settings" />
 
     </RelativeLayout>
 </LinearLayout>

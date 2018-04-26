@@ -1,6 +1,5 @@
 package com.example.grant.groupk;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -19,7 +18,7 @@ public class Homepage extends AppCompatActivity{ //Activity
         setContentView(R.layout.homepage);
 
         String username = getIntent().getStringExtra("Username");
-        TextView tv = (TextView)findViewById(R.id.textUsername);
+        TextView tv = (TextView)findViewById(R.id.text);
         tv.setText(username);
     }
 
@@ -45,5 +44,16 @@ public class Homepage extends AppCompatActivity{ //Activity
             startActivity(i);
         }
 
+    }
+
+    public void onCatalogClick(View v)
+    {
+        if (v.getId() == R.id.CatalogButton)
+        {
+            Intent i = new Intent(Homepage.this, NewArtifact.class);
+            String username = getIntent().getStringExtra("Username");
+            i.putExtra("Username", username);
+            startActivity(i);
+        }
     }
 }

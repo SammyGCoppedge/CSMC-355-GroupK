@@ -23,7 +23,7 @@ public class SignUp extends Activity {
 
     public void onClickConfirm(View v)
     {
-        EditText uname = (EditText)findViewById(R.id.textUsername);
+        EditText uname = (EditText)findViewById(R.id.text);
         EditText e = (EditText)findViewById(R.id.textEmail);
         EditText pw = (EditText)findViewById(R.id.textPassword);
         EditText pwc = (EditText)findViewById(R.id.textConfirmPass);

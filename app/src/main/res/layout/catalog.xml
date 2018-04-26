@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="128dp">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/artifactImage0"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="2dp"
+                    android:onClick="onImageClick0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/textName0"
+                    android:layout_width="144dp"
+                    android:layout_height="23dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:layout_constraintStart_toEndOf="@+id/artifactImage0"
+                    app:layout_constraintTop_toTopOf="@+id/artifactImage0" />
+
+                <TextView
+                    android:id="@+id/textDate0"
+                    android:layout_width="172dp"
+                    android:layout_height="23dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:layout_constraintStart_toEndOf="@+id/textName0"
+                    app:layout_constraintTop_toTopOf="@+id/textName0" />
+
+                <TextView
+                    android:id="@+id/textUser0"
+                    android:layout_width="142dp"
+                    android:layout_height="23dp"
+                    android:layout_marginTop="8dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:layout_constraintStart_toStartOf="@+id/textName0"
+                    app:layout_constraintTop_toBottomOf="@+id/textName0" />
+            </android.support.constraint.ConstraintLayout>
+        </TableRow>
+
+    </TableLayout>
+</ScrollView>
