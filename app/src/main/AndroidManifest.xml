@@ -9,12 +9,15 @@
     <permission
         android:name="com.example.grant.groupk.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
-    <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icont"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -26,28 +29,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login"></activity>
-        <activity android:name=".SignUp"></activity>
-        <activity android:name=".Homepage"></activity>
-        <activity android:name=".ProfilePage"></activity>
-        <activity android:name=".CalendarActivity"></activity>
-        <activity android:name=".MapsActivity"></activity>
-        <activity android:name=".Setting"></activity>
-        <activity android:name=".Catalog"></activity>
-        <activity android:name=".NewArtifact"></activity>
-        <activity android:name=".ArtifactPage"></activity>
-        <activity android:name=".Version"></activity>
-        <activity android:name=".Contact"></activity>
-        <activity android:name=".EditArtifact"></activity>
+        <activity android:name=".Login" />
+        <activity android:name=".SignUp" />
+        <activity android:name=".Homepage" />
+        <activity android:name=".ProfilePage" />
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".MapsActivity" />
+        <activity android:name=".AddEvent" />
+        <activity android:name=".Setting" />
+        <activity android:name=".CalendarContent" />
         <activity android:name=".Version"></activity>
         <activity android:name=".Notice"></activity>
         <activity android:name=".CalendarMainActivity"></activity>
         <activity android:name=".NoteActivity"></activity>
-        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
-        <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/google_maps_key" />
-    </application>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+        <activity android:name=".Contact"></activity>
 
-    
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity android:name=".MessageLayout" />
+        <activity android:name=".sendMessage" />
+        <activity android:name=".ChatRoom" />
+        <activity android:name=".CatalogMain" />
+        <activity android:name=".CatalogTem" />
+        <activity
+            android:name=".add"
+            android:label="@string/title_activity_add" />
+        <activity android:name=".Artifact_detail"></activity>
+    </application>
+
 </manifest>
