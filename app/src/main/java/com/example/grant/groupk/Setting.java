@@ -34,9 +34,17 @@ public class Setting extends AppCompatActivity {
     }
 
     public void onVersionClick(View v) {
-        if (v.getId() == R.id.ContactButton)
+        if (v.getId() == R.id.VersionButton)
         {
             Intent i = new Intent (Setting.this, Version.class);
+            startActivity(i);
+        }
+    }
+
+    public void onNoticesClick(View v) {
+        if (v.getId() == R.id.NoticesButton)
+        {
+            Intent i = new Intent (Setting.this, Notice.class);
             startActivity(i);
         }
     }
