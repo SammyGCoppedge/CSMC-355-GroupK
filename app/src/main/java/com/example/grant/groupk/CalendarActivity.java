@@ -31,16 +31,13 @@ public class CalendarActivity extends AppCompatActivity{
                 String date = (i1 +1) + "/" + i2 + "/" + i;
                 Log.d(TAG,"onSelectedDayChange: date: "+ date);
 
-                Intent intent = new Intent(CalendarActivity.this, CalendarContent.class);
+             //   Intent intent = new Intent(CalendarActivity.this, CalendarContent.class);
+                Intent intent = new Intent(CalendarActivity.this, CalendarMainActivity.class);
                 getIntent().putExtra("date",date);
                 startActivity(intent);
             }
         });
     }
 
-    public void onAddNewEventButtonClick(View v)
-    {
-        Intent i = new Intent(CalendarActivity.this, AddEvent.class);
-        startActivity(i);
-    }
+
 }
