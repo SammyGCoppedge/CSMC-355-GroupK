@@ -16,7 +16,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="36dp"
-            android:text="APP NAME"
+            android:text="Artifact Catalogger"
             android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
         <EditText

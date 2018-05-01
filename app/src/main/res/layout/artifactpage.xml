@@ -28,7 +28,7 @@
             android:layout_width="72dp"
             android:layout_height="21dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="40dp"
             android:text="Details:"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/bio" />
@@ -87,11 +87,12 @@
             app:layout_constraintTop_toTopOf="@+id/textView22" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/editButton"
             android:layout_width="55dp"
             android:layout_height="40dp"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
+            android:onClick="onClickEdit"
             android:text="edit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -164,6 +165,19 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:onClick="onClickGoHome"
+            android:text="Homepage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/details" />
 
     </android.support.constraint.ConstraintLayout>
 
