@@ -4,13 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.grant.groupk.Welcome">
+    tools:context="com.example.grant.groupk.Welcome"
+    app:menu="@menu/test2"
+    >
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/welcome"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -36,6 +43,9 @@
                 android:layout_marginTop="93dp"
                 android:text="Welcome!"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+
+
+
 
         </RelativeLayout>
 

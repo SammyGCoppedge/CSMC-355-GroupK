@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/main"
@@ -9,37 +10,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="15dp"
-            android:layout_marginStart="15dp"
-            android:layout_toEndOf="@+id/textView10"
-            android:layout_toRightOf="@+id/textView10"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="15dp"
-            android:layout_marginStart="15dp"
-            android:text="Hello,"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
         <Button
             android:id="@+id/CatalogButton"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_below="@+id/textView10"
-            android:layout_marginTop="95dp"
-            android:layout_toLeftOf="@+id/text"
-            android:layout_toStartOf="@+id/text"
+
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="96dp"
             android:onClick="onCatalogClick"
             android:text="catalog" />
 
@@ -95,7 +74,8 @@
             android:layout_alignStart="@+id/ChatButton"
             android:layout_alignTop="@+id/CalendarButton"
             android:onClick="onSettingClick"
-            android:text="settings" />
+            android:text="setting" />
 
     </RelativeLayout>
+
 </LinearLayout>

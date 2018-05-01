@@ -16,11 +16,11 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="36dp"
-            android:text="Artifact Catalogger"
+            android:text="APP NAME"
             android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
         <EditText
-            android:id="@+id/textLogin"
+            android:id="@+id/textEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView3"
@@ -33,9 +33,9 @@
             android:id="@+id/textPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textLogin"
-            android:layout_alignStart="@+id/textLogin"
-            android:layout_below="@+id/textLogin"
+            android:layout_alignLeft="@+id/textEmail"
+            android:layout_alignStart="@+id/textEmail"
+            android:layout_below="@+id/textEmail"
             android:layout_marginTop="31dp"
             android:ems="10"
             android:inputType="textPersonName" />
@@ -65,18 +65,17 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textLogin"
-            android:layout_alignStart="@+id/textLogin"
-            android:layout_below="@+id/textLogin"
-            android:text="Username"
+            android:layout_alignLeft="@+id/textEmail"
+            android:layout_alignStart="@+id/textEmail"
+            android:layout_below="@+id/textEmail"
+            android:text="Email"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/textView2"
-            android:layout_alignRight="@+id/textView2"
+            android:layout_alignStart="@+id/textEmail"
             android:layout_below="@+id/textPassword"
             android:text="Password"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
