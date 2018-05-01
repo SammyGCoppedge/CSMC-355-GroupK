@@ -1,29 +1,11 @@
 package com.example.grant.groupk;
 
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.os.Bundle;
-
-import java.util.ArrayList;
-
-/**
- * Created by megry on 4/30/2018.
- */
-
 import android.content.DialogInterface;
-import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -34,6 +16,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+/**
+ * Created by megry on 4/30/2018.
+ */
 
 public class Notice extends AppCompatActivity {
 
@@ -56,7 +42,7 @@ public class Notice extends AppCompatActivity {
     private void loadTaskList() {
         ArrayList<String> taskList = dbHelper.getTaskList();
         if(mAdapter==null){
-            mAdapter = new ArrayAdapter<String>(this,R.layout.notices,R.id.task_title,taskList);
+            mAdapter = new ArrayAdapter<String>(this, R.layout.notices, R.id.task_title,taskList);
             lstTask.setAdapter(mAdapter);
         }
         else{

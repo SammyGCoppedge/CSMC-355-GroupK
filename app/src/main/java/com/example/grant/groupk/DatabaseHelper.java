@@ -89,7 +89,6 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         return b;
     }
 
-
     public boolean contains(String name, String email)
     {
         db = this.getReadableDatabase();

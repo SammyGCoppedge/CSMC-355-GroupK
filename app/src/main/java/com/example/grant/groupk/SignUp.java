@@ -7,41 +7,54 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import android.support.v7.app.AppCompatActivity;
 /**
  * Created by Grant on 4/2/2018.
  */
 
-public class SignUp extends Activity {
+public class SignUp extends AppCompatActivity {
 
-    DatabaseHelper helper = new DatabaseHelper(this);
-
+    private EditText uname, email, password;
+    EditText pwc;
+    private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
+
+        uname = (EditText)findViewById(R.id.textUsername);
+        email = (EditText)findViewById(R.id.textEmail);
+        password = (EditText)findViewById(R.id.textPassword);
+        pwc = (EditText)findViewById(R.id.textConfirmPass);
+        mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
     }
 
     public void onClickConfirm(View v)
     {
-        EditText uname = (EditText)findViewById(R.id.text);
-        EditText e = (EditText)findViewById(R.id.textEmail);
-        EditText pw = (EditText)findViewById(R.id.textPassword);
-        EditText pwc = (EditText)findViewById(R.id.textConfirmPass);
+        final String usernameU, emailE, passwordP;
 
-        String username = uname.getText().toString();
-        String email = e.getText().toString();
-        String password = pw.getText().toString();
-        String passwordConfirm = pwc.getText().toString();
+        usernameU = uname.getText().toString().trim();
+        emailE = email.getText().toString().trim();
+        passwordP = password.getText().toString().trim();
+        String passwordConfirm = pwc.getText().toString().trim();
 
-        if (username.trim().equals("") || username == null || email.trim().equals("") || email == null || password.trim().equals("") ||
-                password == null || passwordConfirm.trim().equals("") || passwordConfirm == null)
+        if (usernameU.equals("") || usernameU == null || emailE.equals("") || emailE == null || passwordP.equals("") ||
+                passwordP == null || passwordConfirm.equals("") || passwordConfirm == null)
         {
             //Popup for nulls
 
             Toast entryError = Toast.makeText(SignUp.this, "Remove blank inputs", Toast.LENGTH_SHORT);
             entryError.show();
         }
-        if (!password.equals(passwordConfirm))
+        if (!passwordP.equals(passwordConfirm))
         {
             //Popup for mismatching password strings
 
@@ -50,29 +63,23 @@ public class SignUp extends Activity {
         }
         else
         {
-            User user = new User();
-            user.setEmail(email);
-            user.setUsername(username);
-            user.setPassword(password);
+           mAuth.createUserWithEmailAndPassword(emailE, passwordP).addOnCompleteListener(new OnCompleteListener<AuthResult>(){
 
-            if (helper.contains(user.getUsername(), user.getEmail()))
-            {
-                //Popup for already existing username/email
+                public void onComplete(Task<AuthResult> task){
+                    if(task.isSuccessful()){
+                        String user_id = mAuth.getCurrentUser().getUid();
+                        DatabaseReference current_user_db = mDatabase.child(user_id);
+                        current_user_db.child("Name").setValue(usernameU);
+                        startActivity(new Intent(SignUp.this, Login.class));
+                    }
+//                    else
+//                        {
+//                            Toast entryError = Toast.makeText(SignUp.this, "Email not exist", Toast.LENGTH_SHORT);
+//                            entryError.show();
+//                        }
+                }
+            });
 
-                Toast entryError = Toast.makeText(SignUp.this, "Username or Email already in use.", Toast.LENGTH_SHORT);
-                entryError.show();
-            }
-            else
-            {
-                helper.insertUser(user);
-
-
-                Intent i = new Intent(SignUp.this, Login.class);
-                i.putExtra("username", username);
-                i.putExtra("email", email);
-                i.putExtra("password", password);
-                startActivity(i);
-            }
         }
     }
 }
