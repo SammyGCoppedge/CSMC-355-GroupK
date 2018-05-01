@@ -32,9 +32,7 @@
         <activity android:name=".ProfilePage"></activity>
         <activity android:name=".CalendarActivity"></activity>
         <activity android:name=".MapsActivity"></activity>
-        <activity android:name=".AddEvent"></activity>
         <activity android:name=".Setting"></activity>
-        <activity android:name=".CalendarContent"></activity>  
         <activity android:name=".Catalog"></activity>
         <activity android:name=".NewArtifact"></activity>
         <activity android:name=".ArtifactPage"></activity>
