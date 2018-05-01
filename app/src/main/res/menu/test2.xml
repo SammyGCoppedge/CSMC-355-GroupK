@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_profile"
+        android:orderInCategory="100"
+        android:title="profile"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_home"
+        android:orderInCategory="100"
+        android:title="home"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_catalog"
+        android:orderInCategory="100"
+        android:title="catalog"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_forum"
+        android:orderInCategory="100"
+        android:title="forum"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_chat"
+        android:orderInCategory="100"
+        android:title="chat room"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_calender"
+        android:orderInCategory="100"
+        android:title="calender"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_map"
+        android:orderInCategory="100"
+        android:title="map"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="setting"
+        app:showAsAction="never" />
+
+</menu>
