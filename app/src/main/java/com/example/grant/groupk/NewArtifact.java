@@ -97,6 +97,7 @@ public class NewArtifact extends Activity implements View.OnClickListener{
                         i.putExtra("Description", desc);
                         i.putExtra("Location", location);
                         i.putExtra("Image", selectedImage.toString());
+                        i.putExtra("User", username);
                         startActivity(i);
                 }
             }

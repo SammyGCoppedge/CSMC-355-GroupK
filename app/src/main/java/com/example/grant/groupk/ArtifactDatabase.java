@@ -15,7 +15,7 @@ import java.util.Date;
 
 public class ArtifactDatabase extends SQLiteOpenHelper{
 
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 4;
     private static final String DATABASE_NAME = "artifactlist.db";
     private static final String TABLE_NAME = "artifacts";
     private static final String COLUMN_ID = "id";
@@ -29,7 +29,7 @@ public class ArtifactDatabase extends SQLiteOpenHelper{
     private static final String COLUMN_COMMENTS = "comments";
     SQLiteDatabase db;
 
-    private static final String TABLE_CREATE = "CREATE TABLE artifacts(id INT PRIMARY KEY NOT NULL , name TEXT NOT NULL , users TEXT NOT NULL , dates TEXT NOT NULL , locations TEXT NOT NULL , descShorts TEXT NOT NULL , descLongs TEXT NOT NULL );";
+    private static final String TABLE_CREATE = "CREATE TABLE artifacts(id INT PRIMARY KEY NOT NULL , name TEXT NOT NULL , users TEXT NOT NULL , dates TEXT NOT NULL , locations TEXT NOT NULL , descShorts TEXT NOT NULL , descLongs TEXT NOT NULL , images TEXT NOT NULL);";
 
     public ArtifactDatabase(Context context)
     {
@@ -68,6 +68,7 @@ public class ArtifactDatabase extends SQLiteOpenHelper{
         values.put(COLUMN_LOCATION, artifact.getLocation());
         values.put(COLUMN_DESSHORT, artifact.getDescriptionShort());
         values.put(COLUMN_DESLONG, artifact.getDescriptionLong());
+        values.put(COLUMN_IMAGES, artifact.getImages());
 
         db.insert(TABLE_NAME, null, values);
         db.close();
@@ -76,7 +77,7 @@ public class ArtifactDatabase extends SQLiteOpenHelper{
     public String searchArtifact(String s)
     {
         db = this.getReadableDatabase();
-        String query = "select name from " +TABLE_NAME;
+        String query = "select name from " + TABLE_NAME;
         Cursor cursor = db.rawQuery(query, null);
 
         String a = "User not found.";
@@ -91,6 +92,15 @@ public class ArtifactDatabase extends SQLiteOpenHelper{
         }
 
         return a;
+    }
+
+    public String getUser(String s)
+    {
+        db = this.getReadableDatabase();
+        String query = "select users from " + TABLE_NAME + " WHERE names = " + s;
+        Cursor cursor = db.rawQuery(query, null);
+        cursor.moveToFirst();
+        return cursor.getString(0);
     }
 
     public boolean contains(String name)
@@ -111,5 +121,12 @@ public class ArtifactDatabase extends SQLiteOpenHelper{
             while (cursor.moveToNext());
         }
         return false;
+    }
+
+    public void deleteRow(String s)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_NAME + " WHERE " + COLUMN_NAMES + "='" + s + "'");
+        db.close();
     }
 }
