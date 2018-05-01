@@ -19,13 +19,6 @@
         android:text="version" />
 
     <Button
-        android:id="@+id/PrivacyButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="onPrivacyClick"
-        android:text="privacy" />
-
-    <Button
         android:id="@+id/LogOutButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
